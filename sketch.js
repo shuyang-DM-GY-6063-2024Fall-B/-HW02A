@@ -26,8 +26,8 @@ function draw() {
   let quad1L = 20;
   let difference = 5
   quad(quad1X,quad1Y, quad1X,quad1Y-quad1L,quad1X+300,quad1Y+225,quad1X+300,quad1Y+225+quad1L)
-  fill(color1);
-  stroke(color1);
+  fill(color4);
+  stroke(color4);
   quad(quad1X-difference,quad1Y-2*difference, quad1X-difference,quad1Y-quad1L-2*difference,quad1X+300-difference,quad1Y+225-2*difference,quad1X+300-difference,quad1Y+225+quad1L-2*difference)
   
   fill(color6);
