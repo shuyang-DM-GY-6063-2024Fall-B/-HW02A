@@ -3,10 +3,8 @@ function setup() {
 }
 
 function draw() {
-  
-  let ellipseX = 160;
-  let ellipseY = 375;
-  let ellipseD = 20;
+  // Set the color to use
+
   let color1 = "#b0312c";//light red
   let color2 = 'white';
   let color3 = 'black';
@@ -14,57 +12,55 @@ function draw() {
   let color5 = '#b2aba3'//gray 1
   let color6 = '#85827f'//gray 2
   background('#e2ca8a');
+  // draw the red circle
+  let ellipseX = 160;
+  let ellipseY = 375;
+  let ellipseD = 20;
   fill(color1);
   stroke(color1);
   ellipse(ellipseX,ellipseY,ellipseD);
 
-  fill(color3);
-  stroke(color3);
 
+  // draw the two bottom quadrilaterals
   let quad1X = 30;
   let quad1Y = 100;
   let quad1L = 20;
-  let difference = 5
+  let difference = 5;
+  fill(color3);
+  stroke(color3);
   quad(quad1X,quad1Y, quad1X,quad1Y-quad1L,quad1X+300,quad1Y+225,quad1X+300,quad1Y+225+quad1L)
   fill(color4);
   stroke(color4);
   quad(quad1X-difference,quad1Y-2*difference, quad1X-difference,quad1Y-quad1L-2*difference,quad1X+300-difference,quad1Y+225-2*difference,quad1X+300-difference,quad1Y+225+quad1L-2*difference)
   
+  // draw the Hollow gray quadrilateral
   fill(color6);
   stroke(color6);
   let grayquadX = 110;
   let grayquadY = 110;
   let grayquadL = 140;
-
-  quad(grayquadX,grayquadY,grayquadX + 60,grayquadY - 15,grayquadX+ 4*grayquadL/5 + 60,grayquadY+ 3*grayquadL/5-15,grayquadX + 4*grayquadL/5,grayquadY + 3*grayquadL/5)
-  
+  quad(grayquadX,grayquadY,grayquadX + 60,grayquadY - 15,grayquadX+ 4*grayquadL/5 + 60,grayquadY+ 3*grayquadL/5-15,grayquadX + 4*grayquadL/5,grayquadY + 3*grayquadL/5)  
   fill('#e2ca8a');
   stroke('#e2ca8a');
-
   quad(grayquadX+8,grayquadY+6,grayquadX + 56,grayquadY - 7 ,grayquadX+ 4*grayquadL/5 + 32,grayquadY+ 3*grayquadL/5-23,grayquadX + 4*grayquadL/5-12,grayquadY + 3*grayquadL/5-7)
-  
-  
+
+  // draw two arallel red quadrilaterals and the white one
   fill(color1);
   stroke(color1);
-
   let quad2X = 100;
   let quad2Y = 150;
   let quad2L = 22;
-  
-  quad(quad2X,quad2Y, quad2X + 30,quad2Y + 30,quad2X + 102 ,quad2Y + 12,quad2X + 72,quad2Y - 18)
-  
   let distance = 80;
-
+  quad(quad2X,quad2Y, quad2X + 30,quad2Y + 30,quad2X + 102 ,quad2Y + 12,quad2X + 72,quad2Y - 18)
   quad(quad2X + distance,quad2Y +distance, quad2X + 30+ distance,quad2Y +30+distance,quad2X+102+ distance,quad2Y + 12 +distance,quad2X + 72+ distance,quad2Y - 18+distance)
+  
   fill(color2);
   stroke(color2);
-
   quad3X = quad2X + distance
   quad3Y = quad2Y +distance
-
-
-
   quad(quad3X,quad3Y,quad3X + 72,quad3Y - 18,quad3X + 80,quad3Y - 68,quad3X+8,quad3Y - 50)
+
+  // draw the cube and red lines across it
   let cube1X = 100
   let cube1Y = 240
   let cube1H = 120
@@ -83,6 +79,7 @@ function draw() {
   stroke(color3);
   quad(cube1X,cube1Y -cube1H,cube1X-30,cube1Y-20-cube1H,cube1X +20,cube1Y -30-cube1H,cube1X +50,cube1Y -10-cube1H)
   
+  // draw the part blocked by the gray hollow rectangle
   fill(color1);
   stroke(color1);
   quad(quad2X+15,quad2Y+15, quad2X + 30,quad2Y + 30,quad2X + 102 ,quad2Y + 12,quad2X + 87,quad2Y - 3)
